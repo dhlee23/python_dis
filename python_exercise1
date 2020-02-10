@@ -5,7 +5,7 @@ Created on Sun Feb  9 13:28:50 2020
 
 @author: Dae Hyun Lee
 """
-sudo easy_install pip
+
 # Python exercises
 ###### Part 1 (creating python lists)
 # (a)
@@ -66,7 +66,7 @@ print(list_5)
 import re
 with open('lorem.txt', 'r') as file:
     hah = file.read().replace('\n', '')
-len(hah) > 8
+
 # function that counts the length of strings
 def countWords(hah): 
     count1_4 = 0
@@ -90,3 +90,5 @@ def countWords(hah):
 countWords(hah)  
 
 # (b)
+countCap=len(re.findall(r"[A-Z]+",hah))
+print(countCap)
