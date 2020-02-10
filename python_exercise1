@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb  9 13:28:50 2020
+
+@author: Dae Hyun Lee
+"""
+sudo easy_install pip
+# Python exercises
+###### Part 1 (creating python lists)
+# (a)
+list_a = list(range(1,21))
+print(list_a)
+#list_b = list_a.reverse()
+#print (list_b)
+
+# (b)
+list_b = list(range(1,21))
+list_b.reverse()
+print(list_b)
+
+# (c)
+list_c = list(range(1,21))
+list_c = list_c + list(range(19,0,-1))
+print(list_c)
+
+# (d)
+list_d = 10 * [4,6,3]
+print(list_d)
+
+# (e)
+list_e = 11 * [4,6,3]
+del list_e[31:33]
+
+###### Part 2 (creating a list of the values)
+import math
+import numpy as np
+list_2 = []
+for n in np.arange(3,6,0.1):
+    list_2.append(math.exp(n) * math.cos(n))
+print(list_2)
+
+###### Part 3
+list_3 = []
+for n in np.arange(1 , 26):
+    list_3.append((2**n) / n)
+print(list_3)
+
+###### Part 4
+# (a)
+list_4 = []
+n = len(list_a)
+for i in range(n) :
+    list_4.append(list_a[i] - list_a[n-i-1])
+print(list_4)
+    
+# (b)
+list_5 = []
+for i in range(len(list_a)):
+    list_5.append(list_a[i]%2==0)
+print(list_5)
+
+###### Part 5
+# (a)
+# read a text file and save as string
+import re
+with open('lorem.txt', 'r') as file:
+    hah = file.read().replace('\n', '')
+len(hah) > 8
+# function that counts the length of strings
+def countWords(hah): 
+    count1_4 = 0
+    count4_7 = 0
+    count8 = 0
+    # split the string  
+    hah = hah.split(' ')
+    # iterate in words of string  
+    for word in hah:  
+        # if length is greater than 8
+        if len(word) > 8: 
+            count8 = count8 + 1
+        if len(word) > 0 and len(word) < 5:
+            count1_4 = count1_4 + 1
+        if len(word) > 3 and len(word) < 8:
+            count4_7 = count4_7 + 1
+    print("the number of strings whose lengths are in between 1 and 4 is ", count1_4)
+    print("the number of strings whose lengths are in between 4 and 7 is ", count4_7)
+    print("the number of strings whose lengths are greater than 8 is ", count8)
+# Driver Code  
+countWords(hah)  
+
+# (b)
